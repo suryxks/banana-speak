@@ -7,7 +7,7 @@ function constructURL(text){
     return url + "?" + "text=" + text;
 }
  function errorHandler(error){
-   console.log("error occured",error);
+   alert("you Have crossed the limit Try after an hour",error);
  }
 btn.addEventListener("click", function(){
   var txtval=inputTextArea.value;
