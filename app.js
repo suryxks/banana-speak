@@ -1,13 +1,23 @@
-var btn=document.querySelector("button")
-var optputElement=document.querySelector("#txt-output");
+var btn=document.querySelector("#btn-translate")
+var outDiv=document.querySelector("#txt-output")
 var inputTextArea=document.querySelector("#txt-input");
-var url="https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
-var txtval=inputTextArea.value;
-function getUrl(url,value){
-    return url+"?"+"testing="+value;
+var url="https://api.funtranslations.com/translate/minion.json";
+
+function constructURL(text){
+    return url + "?" + "text=" + text;
 }
-var output=fetch(getUrl(url,txtval))
-.then(res=>res.json());
+ function errorHandler(error){
+   console.log("error occured",error);
+ }
 btn.addEventListener("click", function(){
-  optputElement.innerText=output;
+  var txtval=inputTextArea.value;
+ var op= fetch(constructURL(txtval))
+  .then(res=>res.json())
+  .then(json=>{
+      var output=json.contents.translated;
+      outDiv.innerText=output;
+      
+  })
+  .catch(errorHandler);
+
 });
