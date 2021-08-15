@@ -2,16 +2,26 @@
 
 :root{
     --primary-color:#FCD34D;
+    --primary-dark:#111827;
+    --txt-color:#FEF3C7;
+
 }
 body{
   font-family: 'Montserrat', sans-serif;;
-}
+  background-color: var(--primary-dark);
+  
+  }
 #txt-output{
     width:90%;
     height:5rem;
     border:1px solid black;
+    border-radius: 0.3rem;
+    background-color: #FEF3C7;
+    color:var(--primary-dark);
 }
-
+.translate-now{
+    color:var(--txt-color);
+}
 
 #hero-heading{
   text-align: center;
@@ -34,6 +44,7 @@ body{
     margin:2rem; 
 }
 #btn-translate{
+    background-color: var(--primary-color);
     font-size: large;
 }
 #footer{
